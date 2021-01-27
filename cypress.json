@@ -1,0 +1,15 @@
+{
+
+    "viewportWidth": 1000,
+    "viewportHeight": 660,
+    "defaultCommandTimeout": 8000,
+    "pageLoadTimeout": 12000,
+    "env": {
+      "url": "http://automationpractice.com/index.php"
+    },  
+    "testFiles": "**/*.feature",
+    "retries": {
+      "runMode": 1
+    },
+    "projectId": "88nt4c"
+}

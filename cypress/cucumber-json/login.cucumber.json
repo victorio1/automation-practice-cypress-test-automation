@@ -1,0 +1,72 @@
+[
+  {
+    "description": "    application Regression",
+    "keyword": "Feature",
+    "name": "Login",
+    "line": 1,
+    "id": "login",
+    "tags": [],
+    "uri": "login.feature",
+    "elements": [
+      {
+        "id": "login;login-passed",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Login Passed",
+        "tags": [
+          {
+            "name": "@login",
+            "line": 5
+          },
+          {
+            "name": "@e2e-test",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am at Automation Practice",
+            "result": {
+              "status": "passed",
+              "duration": 10662000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I try to login into the webpage",
+            "result": {
+              "status": "passed",
+              "duration": 5840000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I write my email and password",
+            "result": {
+              "status": "passed",
+              "duration": 2381000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I verify the user is Eduardo Victorio",
+            "result": {
+              "status": "passed",
+              "duration": 35000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

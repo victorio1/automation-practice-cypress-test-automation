@@ -1,0 +1,82 @@
+[
+  {
+    "description": "    application Regression",
+    "keyword": "Feature",
+    "name": "Search Product",
+    "line": 1,
+    "id": "search-product",
+    "tags": [],
+    "uri": "searchProduct.feature",
+    "elements": [
+      {
+        "id": "search-product;search-product",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Search Product",
+        "tags": [
+          {
+            "name": "@searchProduct",
+            "line": 5
+          },
+          {
+            "name": "@e2e-test",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am at Automation Practice",
+            "result": {
+              "status": "passed",
+              "duration": 8349000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I search product blouse",
+            "result": {
+              "status": "passed",
+              "duration": 7005000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I change mode grid to list",
+            "result": {
+              "status": "passed",
+              "duration": 114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I add the product to Cart",
+            "result": {
+              "status": "passed",
+              "duration": 825000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I verify the value cart is 1",
+            "result": {
+              "status": "passed",
+              "duration": 39000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

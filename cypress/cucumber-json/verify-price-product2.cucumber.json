@@ -1,0 +1,68 @@
+[
+  {
+    "description": "    Verify Price Product",
+    "keyword": "Feature",
+    "name": "Verify Price Product 2",
+    "line": 1,
+    "id": "verify-price-product-2",
+    "tags": [],
+    "uri": "verify-price-product2.feature",
+    "elements": [
+      {
+        "id": "verify-price-product-2;verify-price-product-2",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Verify Price Product 2",
+        "tags": [
+          {
+            "name": "@e2e-test",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am at Automation Practice",
+            "result": {
+              "status": "passed",
+              "duration": 2448000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I search Blouse",
+            "result": {
+              "status": "passed",
+              "duration": 1406000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I change mode grid to list",
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I verify price product is 27",
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
