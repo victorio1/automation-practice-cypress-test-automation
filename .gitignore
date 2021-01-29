@@ -8,7 +8,6 @@
 *.seed
 env
 reports
-cucumber-html-report.js
 logs
 pids
 lib-cov
