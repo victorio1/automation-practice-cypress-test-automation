@@ -1,13 +1,13 @@
 /// <reference types="Cypress"/>
-import Homepage from '../../../support/pageObjects/home-page'
-import Productpage from '../../../support/pageObjects/product-page'
+import HomeAction from '../../../actions/homeAction'
+import ProductAction from '../../../actions/productAction';
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const homepage = new Homepage()
-const productpage = new Productpage()
+const homeaction = new HomeAction()
+const productaction = new ProductAction()
 
-let product= "";
-let price = "";
+let product= "Blouse";
+let price = "27.00";
 
 Given('I am at Automation Practice',()=>{
 
@@ -17,23 +17,19 @@ Given('I am at Automation Practice',()=>{
 
 And('I search Blouse', function () {
     
-    homepage.getTextBoxSearch().type('Blouse')
-    homepage.getButtonSearch().click()
+    homeaction.writeSearch(product)
+    homeaction.clickSearch()
 })
 
 When('I change mode grid to list', function() {
 
-    productpage.getModeList().click()
+    productaction.clickModeList()
 
 })
 
 
 Then('I verify price product is 27', function() {
 
-    productpage.getLabelPriceProduct().then(function (element){
-        const amount = element.text()
-        var res = amount.split("$")
-        var price = res[1].trim()
-        expect(price).to.equal("27.00")
-    })
+    productaction.verifyPriceProductCart(price)
+
 })
