@@ -16,5 +16,9 @@ class Homepage {
         return cy.get('.account > span')
     }
 
+    getTextLoginFailed(){
+        return cy.get('ol > li')
+    }
+
 } 
 export default Homepage
