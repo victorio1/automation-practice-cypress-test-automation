@@ -1,5 +1,4 @@
 /// <reference types="Cypress"/>
-
 import HomeAction from '../../../actions/homeAction'
 import ProductAction from '../../../actions/productAction'
 
