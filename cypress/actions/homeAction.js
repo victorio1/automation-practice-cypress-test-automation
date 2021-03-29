@@ -20,6 +20,11 @@ class homeAction {
         return homepage.getButtonSearch().click()
     }
 
+    verifyLoginFailed(textExpected){
+        return homepage.getTextLabelLoginFailed().should('have.text',textExpected)
+    }
+
+
 }
 
 export default homeAction 

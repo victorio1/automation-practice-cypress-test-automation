@@ -7,6 +7,8 @@ class homeLocators {
     buttonSignIn = 'a.login'
 
     textLabelUser = '.account > span'
+
+    textLabelLoginFailed = 'ol > li'
      
 }
 

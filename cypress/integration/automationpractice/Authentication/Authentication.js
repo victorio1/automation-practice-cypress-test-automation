@@ -1,11 +1,12 @@
 /// <reference types="Cypress"/>
 import Homepage from '../../../support/pageObjects/home-page'
-import Authenticationaction from '../../../actions/authenticationAction'
+import HomeAction from '../../../actions/homeAction'
+import AuthenticationAction from '../../../actions/authenticationAction'
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import authenticationAction from '../../../actions/authenticationAction';
 
 const homepage = new Homepage()
-const authenticationaction = new Authenticationaction()
+const authenticationaction = new AuthenticationAction()
+const homeaction = new HomeAction()
 
 let user
 let password
@@ -18,7 +19,7 @@ Given('I am at Automation Practice', () => {
 
 And('I try to login into the webpage', function () {
 
-    homepage.getButtonSignIn().click()
+    homeaction.clickSignIn()
 
 })
 
@@ -33,7 +34,7 @@ When('I write my email and password', function() {
 
 Then('I verify the user is Eduardo Victorio', function(){
 
-    homepage.getTextLabelUser().should('have.text','Eduardo Victorio')
+    homeaction.verifyUser('Eduardo Victorio')
 })
 
 When('I write my account', function(dataTable){
@@ -48,8 +49,7 @@ When('I write my account', function(dataTable){
 
 Then('I verify the user was not logged in', function(){
 
-    homepage.getTextLoginFailed().should('have.text','Authentication failed.')
-
+    homeaction.verifyLoginFailed('Authentication failed.')
 })
 
 When('I select the option Forgot', function() {

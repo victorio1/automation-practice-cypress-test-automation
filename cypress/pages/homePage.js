@@ -20,6 +20,10 @@ class Homepage {
         return cy.get(homelocators.textLabelUser)
     }
 
+    getTextLabelLoginFailed(){
+        return cy.get(homelocators.textLabelLoginFailed)
+    }
+
 } 
 
 export default Homepage
