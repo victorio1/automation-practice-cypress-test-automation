@@ -1,10 +1,11 @@
 /// <reference types="Cypress"/>
 import Homepage from '../../../support/pageObjects/home-page'
-import Authenticationpage from '../../../support/pageObjects/authentication-page'
+import Authenticationaction from '../../../actions/authenticationAction'
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import authenticationAction from '../../../actions/authenticationAction';
 
 const homepage = new Homepage()
-const authenticationpage = new Authenticationpage()
+const authenticationaction = new Authenticationaction()
 
 let user
 let password
@@ -23,9 +24,9 @@ And('I try to login into the webpage', function () {
 
 When('I write my email and password', function() {
 
-    authenticationpage.getTextBoxEmail().type('evictorio.uni@gmail.com')
-    authenticationpage.getTxtBoxPassword().type('1234567')
-    authenticationpage.getButtonSignIn().click()
+    authenticationaction.writeEmail('evictorio.uni@gmail.com')
+    authenticationaction.writePassword('1234567')
+    authenticationaction.clickSignIn()
 
 })
 
@@ -40,10 +41,9 @@ When('I write my account', function(dataTable){
     user = dataTable.rawTable[1][0]
     password = dataTable.rawTable[1][1] 
 
-    authenticationpage.getTextBoxEmail().type(dataTable.rawTable[1][0])
-    authenticationpage.getTxtBoxPassword().type(dataTable.rawTable[1][1])
-    authenticationpage.getButtonSignIn().click()
-
+    authenticationaction.writeEmail(dataTable.rawTable[1][0])
+    authenticationaction.writePassword(dataTable.rawTable[1][1])
+    authenticationaction.clickSignIn()
 })
 
 Then('I verify the user was not logged in', function(){
@@ -53,20 +53,20 @@ Then('I verify the user was not logged in', function(){
 })
 
 When('I select the option Forgot', function() {
-
-    authenticationpage.getButtonForgotMyPassword().click()
+    
+    authenticationaction.clickForgotMyPassword()
 
 })
 
 And('I write my {string}', (email) => {
 
-   authenticationpage.getTxtBoxEmailAddress().type(email)
-   authenticationpage.getButtonRetrievePassword().click()
+    authenticationaction.writeEmailAddress(email)
+    authenticationaction.clickRetrievePassword()
 
 })
 
 Then('I verify the {string} for email was sent', (text) => {
 
-    authenticationpage.getTextLabelEmailSent().should('have.text',text)
+    authenticationaction.verifyEmailSent(text)
 
 })
