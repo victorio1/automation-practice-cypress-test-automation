@@ -53,16 +53,8 @@ class authenticationAction {
         return authenticationpage.getTextBoxFirstName().type(firstName)
     }
 
-    clickLastName(){
-        return authenticationpage.getTextBoxLastName().click()
-    }
-
     writeLastName(lastName){
         return authenticationpage.getTextBoxLastName().type(lastName)
-    }
-
-    clickCreatePassword(){
-        return authenticationpage.getTextBoxCreatePassword().click()
     }
 
     writeCreatePassword(password){

@@ -97,9 +97,7 @@ And('I complete information such as {string}, {string}, {string}, {string}, {str
     }
 
     authenticationaction.writeFirstName(firstname)
-    authenticationaction.clickLastName()
     authenticationaction.writeLastName(lastname)
-    authenticationaction.clickCreatePassword()
     authenticationaction.writeCreatePassword(password)
     authenticationaction.selectDay(day)
     authenticationaction.selectMonth(month)
