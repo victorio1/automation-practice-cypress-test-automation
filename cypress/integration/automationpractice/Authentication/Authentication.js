@@ -1,10 +1,8 @@
 /// <reference types="Cypress"/>
-import Homepage from '../../../support/pageObjects/home-page'
 import HomeAction from '../../../actions/homeAction'
 import AuthenticationAction from '../../../actions/authenticationAction'
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const homepage = new Homepage()
 const authenticationaction = new AuthenticationAction()
 const homeaction = new HomeAction()
 

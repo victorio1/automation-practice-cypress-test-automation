@@ -1,10 +1,12 @@
 /// <reference types="Cypress"/>
-import Homepage from '../../../support/pageObjects/home-page'
-import Productpage from '../../../support/pageObjects/product-page'
+
+import HomeAction from '../../../actions/homeAction'
+import ProductAction from '../../../actions/productAction'
+
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const homepage = new Homepage()
-const productpage = new Productpage()
+const productaction = new ProductAction()
+const homeaction = new HomeAction()
 
 Given('I am at Automation Practice', () => {
 
@@ -14,59 +16,48 @@ Given('I am at Automation Practice', () => {
 
 And('I search product blouse', function () {
 
-    homepage.getTextBoxSearch().type('Blouse')
-    homepage.getButtonSearch().click()
+    homeaction.writeSearch('Blouse')
+    homeaction.clickSearch()
 
 })
 
 When('I change mode grid to list', function () {
 
-    productpage.getModeList().click()
+    productaction.clickModeList()
 
 })
 
 And('I add the product to Cart', function () {
 
-    productpage.getButtonAddtoCart().click()
-    productpage.getButtonContinueShopping().click()
+    productaction.clickAddtoCart()
+    productaction.clickContinueShopping()
 
 })
 
 Then('I verify the value cart is 1', function () {
 
-    productpage.getLabelTextCartisFull().should('have.text', '1')
-
+    productaction.verifyValueCart('1')
 })
 
 And("I search {string}", (product) => {
 
-    homepage.getTextBoxSearch().type(product)
-    homepage.getButtonSearch().click()
+    homeaction.writeSearch(product)
+    homeaction.clickSearch()
 })
 
 Then("I verify price product is {string}", (price) => {
 
-    productpage.getLabelPriceProduct().then(function (element) {
-        const amount = element.text()
-        var res = amount.split("$")
-        var price = res[1].trim()
-        expect(price).to.equal(price)
-    })
+    productaction.verifyPriceProductCart(price)
 
 })
 
 And('I search Blouse', function () {
 
-    homepage.getTextBoxSearch().type('Blouse')
-    homepage.getButtonSearch().click()
+    homeaction.writeSearch('Blouse')
+    homeaction.clickSearch()
 })
 
 Then('I verify price product is 27', function() {
 
-    productpage.getLabelPriceProduct().then(function (element){
-        const amount = element.text()
-        var res = amount.split("$")
-        var price = res[1].trim()
-        expect(price).to.equal("27.00")
-    })
+    productaction.verifyPriceProductCart("27.00")
 })
