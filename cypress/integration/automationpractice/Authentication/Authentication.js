@@ -2,6 +2,7 @@
 import HomeAction from '../../../actions/homeAction'
 import AuthenticationAction from '../../../actions/authenticationAction'
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import authenticationLocators from '../../../locators/authenticationLocators';
 
 const authenticationaction = new AuthenticationAction()
 const homeaction = new HomeAction()
@@ -66,5 +67,42 @@ And('I write my {string}', (email) => {
 Then('I verify the {string} for email was sent', (text) => {
 
     authenticationaction.verifyEmailSent(text)
+
+})
+
+Given('I am at Automation Practice while I select the option create an account and I complete my {string}',  (email) => {
+
+    cy.visit(Cypress.env('url'));
+    
+    homeaction.clickSignIn()
+    authenticationaction.writeEmailforCreateAnAccount(email)
+    authenticationaction.clickCreateAnAccount()
+
+})
+
+And('I complete information such as {string}, {string}, {string}, {string}, {string}, {string} and {string}', (tittle,firstname,lastname,password,day,month,year) => {
+
+    if(tittle='Mr'){
+
+    authenticationaction.clickTittleMr()
+
+    } else if (tittle='Mrs') {
+
+    authenticationaction.clickTittleMrs()
+
+    } else {
+
+      print("error")  
+
+    }
+
+    authenticationaction.writeFirstName(firstname)
+    authenticationaction.clickLastName()
+    authenticationaction.writeLastName(lastname)
+    authenticationaction.clickCreatePassword()
+    authenticationaction.writeCreatePassword(password)
+    authenticationaction.selectDay(day)
+    authenticationaction.selectMonth(month)
+    authenticationaction.selectYear(year)
 
 })

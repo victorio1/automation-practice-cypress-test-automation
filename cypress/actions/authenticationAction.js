@@ -1,3 +1,4 @@
+import authenticationLocators from '../locators/authenticationLocators'
 import authenticatioPage from '../pages/authenticationPage'
 
 const authenticationpage = new authenticatioPage
@@ -31,6 +32,55 @@ class authenticationAction {
     verifyEmailSent(text){
         return authenticationpage.getTextLabelEmailSent().should('have.text',text)
     }
+
+    writeEmailforCreateAnAccount(EmailForCreateAccount){
+        return authenticationpage.getTextBoxCreateAccountEmailAddress().type(EmailForCreateAccount)
+    }
+
+    clickCreateAnAccount(){
+        return authenticationpage.getButtonCreateAnAccount().click()
+    }
+
+    clickTittleMr(){
+        return authenticationpage.getCheckBoxMr().click()
+    }
+
+    clickTittleMrs(){
+        return authenticationpage.getCheckBoxMrs().click()
+    }
+
+    writeFirstName(firstName){
+        return authenticationpage.getTextBoxFirstName().type(firstName)
+    }
+
+    clickLastName(){
+        return authenticationpage.getTextBoxLastName().click()
+    }
+
+    writeLastName(lastName){
+        return authenticationpage.getTextBoxLastName().type(lastName)
+    }
+
+    clickCreatePassword(){
+        return authenticationpage.getTextBoxCreatePassword().click()
+    }
+
+    writeCreatePassword(password){
+        return authenticationpage.getTextBoxCreatePassword().type(password)
+    }
+
+    selectDay(day){
+        return authenticationpage.getListBoxDay().select(day)
+    }
+
+    selectMonth(month){
+        return authenticationpage.getListBoxMonth().select(month)
+    }
+
+    selectYear(year){
+        return authenticationpage.getListBoxYear().select(year)
+    }
+
 
 }
 
