@@ -26,11 +26,7 @@ class authenticationLocators {
 
     textboxLastName = 'input[name="customer_lastname"]'
 
-    // #passwd
-
-    // textboxCreatePassword = 'input[type="password"]'
-    
-    textboxCreatePassword = '#passwd'
+    textboxCreatePassword = 'input[type="password"]'
 
     listboxDay = 'select#days'
 

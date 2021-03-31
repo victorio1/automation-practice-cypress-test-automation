@@ -12,7 +12,7 @@ Feature: Authentication
 
         Examples:
             | email                      | tittle | firstname | lastname | password | day | month | year | company | address  | address2     | city  | state      | zip   | country       | additionalinformation | homephone | mobilephone | referenceaddress                    |
-            | evictorio.uni548@gmail.com | Mr     | Roberex   | xdxdxd   | abcde    | 3   | March | 1997 | Belcorp | Av. Grau | Av. Aviación | Lince | California | 07031 | United States | Elpepe                | 940478546 | 940478452   | Al frente del mercadito de don pepe |
+            | evictorio.uni948@gmail.com | Mr     | Roberexd  | xdfxdxd  | Kj123s   | 3   | March | 1997 | Belcorp | Av. Grau | Av. Aviación | Lince | California | 07031 | United States | Elpepe                | 940478546 | 940478452   | Al frente del mercadito de don pepe |
 
     @login @e2e-test
     Scenario: Login Passed
