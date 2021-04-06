@@ -73,6 +73,53 @@ class authenticationAction {
         return authenticationpage.getListBoxYear().select(year)
     }
 
+    writeCompany(company){
+        return authenticationpage.getTextBoxCompany().type(company)
+    }
+
+    writeAddress1(address1){
+        return authenticationpage.getTextBoxAddress1().type(address1)
+    }
+
+    writeAddress2(address2){
+        return authenticationpage.getTextBoxAddress2().type(address2)
+    }
+
+    writeCity(city){
+        return authenticationpage.getTextBoxCity().type(city)
+    }
+
+    selectState(state){
+        return authenticationpage.getListBoxState().select(state)
+    }
+
+    writeZip(zip){
+        return authenticationpage.getTextBoxZip().type(zip)
+    }
+
+    selectCountry(country){
+        return authenticationpage.getListBoxCountry().select(country)
+    }
+
+    writeAdditionalInformation(addInformation){
+        return authenticationpage.getTextBoxAdditionalInformation().type(addInformation)
+    }
+
+    writeHomePhone(homePhone){
+        return authenticationpage.getTextBoxPhone().type(homePhone)
+    }
+
+    writeMobilePhone(mobilePhone){
+        return authenticationpage.getTextBoxMobilePhone().type(mobilePhone)
+    }
+
+    writeAlias(alias){
+        return authenticationpage.getTextBoxAlias().type(alias)
+    }
+
+    clickRegister(){
+        return authenticationpage.getButtonRegisterNewAccount().click()
+    }
 
 }
 

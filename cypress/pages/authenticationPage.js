@@ -109,7 +109,7 @@ class Authentication {
     }
 
     getTextBoxMobilePhone(){
-        return cy.get(authenticationlocators.getTextBoxMobilePhone)
+        return cy.get(authenticationlocators.textboxMobilePhone)
     }
 
     getTextBoxAlias(){

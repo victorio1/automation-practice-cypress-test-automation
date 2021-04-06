@@ -102,5 +102,35 @@ And('I complete information such as {string}, {string}, {string}, {string}, {str
     authenticationaction.selectDay(day)
     authenticationaction.selectMonth(month)
     authenticationaction.selectYear(year)
+})
+
+When('I complete the information about my address such as {string}, {string}, {string}, {string},{string}, {string}', (company,address,address2,city,country,zip) =>{
+
+    authenticationaction.writeCompany(company)
+    authenticationaction.writeAddress1(address)
+    authenticationaction.writeAddress2(address2)
+    authenticationaction.writeCity(city)
+    authenticationaction.selectCountry(country)
+    authenticationaction.writeZip(zip)
+
+})
+
+And('I continue to complete with {string}, {string}, {string}, {string} and {string}' , (state,additionalinformation,homephone,mobilephone,referenceaddress) => {
+
+    authenticationaction.selectState(state)
+    authenticationaction.writeAdditionalInformation(additionalinformation)
+    authenticationaction.writeHomePhone(homephone)
+    authenticationaction.writeMobilePhone(mobilephone)
+    authenticationaction.writeAlias(referenceaddress)
+})
+
+And('Finally I select the button Register for the creation about the account', () => {
+
+    authenticationaction.clickRegister()
+})
+
+Then("I verify the {string} and {string} account is log in how session active", (firstname,lastname) => {
+    
+    homeaction.verifyUser(firstname + " " + lastname)
 
 })
