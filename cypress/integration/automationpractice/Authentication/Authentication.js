@@ -2,7 +2,6 @@
 import HomeAction from '../../../actions/homeAction'
 import AuthenticationAction from '../../../actions/authenticationAction'
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import authenticationLocators from '../../../locators/authenticationLocators';
 
 const authenticationaction = new AuthenticationAction()
 const homeaction = new HomeAction()

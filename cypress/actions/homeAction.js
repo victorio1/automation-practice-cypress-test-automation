@@ -24,6 +24,10 @@ class homeAction {
         return homepage.getTextLabelLoginFailed().should('have.text',textExpected)
     }
 
+    clickContactUs(){
+        return homepage.getbuttonContactUs().click()
+    }
+
 
 }
 

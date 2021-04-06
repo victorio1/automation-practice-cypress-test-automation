@@ -1,7 +1,6 @@
 import homeLocators from '../locators/homeLocators'
 
 const homelocators = new homeLocators
-
 class Homepage {
 
     getTextBoxSearch(){
@@ -22,6 +21,10 @@ class Homepage {
 
     getTextLabelLoginFailed(){
         return cy.get(homelocators.textLabelLoginFailed)
+    }
+    
+    getbuttonContactUs(){
+        return cy.get(homelocators.buttonContactUs)
     }
 
 } 
