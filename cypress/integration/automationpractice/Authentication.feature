@@ -1,7 +1,7 @@
 Feature: Authentication
 
     application Regression
-    @register-account
+    @register-account @e2e-test
     Scenario Outline: Create Account Passed
         Given I am at Automation Practice while I select the option create an account and I complete my "<email>"
         And I complete information such as "<tittle>", "<firstname>", "<lastname>", "<password>", "<day>", "<month>" and "<year>"
@@ -12,7 +12,7 @@ Feature: Authentication
 
         Examples:
             | email                      | tittle | firstname | lastname | password | day | month | year | company | address  | address2     | city  | state   | zip   | country       | additionalinformation | homephone | mobilephone | referenceaddress |
-            | evictorio.uni748@gmail.com | Mr     | Roberexd  | xdfxdxd  | Kj123s   | 3   | March | 1997 | Belcorp | Av. Grau | Av. Aviación | Lince | Alabama | 07031 | United States | Elpepe                | 940478546 | 940478452   | don pepe         |
+            | evictorio.uni751@gmail.com | Mr     | Roberexd  | xdfxdxd  | Kj123s   | 3   | March | 1997 | Belcorp | Av. Grau | Av. Aviación | Lince | Alabama | 07031 | United States | Elpepe                | 940478546 | 940478452   | don pepe         |
 
     @login @e2e-test
     Scenario: Login Passed
@@ -21,6 +21,7 @@ Feature: Authentication
         When I write my email and password
         Then I verify the user is Eduardo Victorio
 
+    @e2e-test
     Scenario: Login Failed
         Given I am at Automation Practice
         And I try to login into the webpage
@@ -28,7 +29,7 @@ Feature: Authentication
             | user             | password  |
             | pepito@gmail.com | failedpsd |
         Then I verify the user was not logged in
-
+    @e2e-test
     Scenario Outline: Forgot your password Passed
         Given I am at Automation Practice
         And I try to login into the webpage

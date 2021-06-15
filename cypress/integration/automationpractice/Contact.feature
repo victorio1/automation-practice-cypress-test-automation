@@ -2,6 +2,7 @@ Feature: Contact
 
     Contact xddx
 
+    @e2e-test
     Scenario Outline:  Contact for an Issue Passed
         Given I am at Automation Practice while I select the option Contact Us
         And I complete the information about "<SubjectHeadling>", "<Email>"
